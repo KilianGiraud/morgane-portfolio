@@ -1,20 +1,20 @@
 const TIMELINE = [
   {
-    year: '2004',
+    year: '1998',
     title: '👶 Naissance',
     desc: 'Morgane naît en criant. Il n\'a jamais arrêté depuis.',
     icon: '🍼',
   },
   {
-    year: '2008',
+    year: '2004',
     title: '🏫 Première expérience de management',
     desc: 'Morgane organise la cour de récré. 3 enfants pleurent. La directrice convoque ses parents.',
     icon: '🏫',
   },
   {
-    year: '2012',
+    year: '2010',
     title: '📊 Collège - Déléguée de classe',
-    desc: 'Élue par défaut car personne d\'autre ne voulait. Met en place un "système de reporting hebdomadaire" pour les devoirs. Ses camarades la détestent.',
+    desc: 'Élu par défaut car personne d\'autre ne voulait. Met en place un "système de reporting hebdomadaire" pour les devoirs. Ses camarades la détestent.',
     icon: '📋',
   },
   {
@@ -24,7 +24,7 @@ const TIMELINE = [
     icon: '🎓',
   },
   {
-    year: '2018',
+    year: '2017',
     title: '📈 École de Commerce',
     desc: 'Intègre une école de commerce dont personne n\'a entendu parler. Se spécialise en "Leadership Disruptif" et "Synergies Transversales Augmentées".',
     icon: '🏛️',
@@ -84,14 +84,14 @@ const SOFT_SKILLS = [
 
 export default function About() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
       {/* INTRO */}
-      <section className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-cyan-300 animate-glitch mb-4"
+      <section className="text-center mb-10 md:mb-16">
+        <h2 className="text-2xl md:text-4xl font-bold text-cyan-300 animate-glitch mb-4"
             style={{ textShadow: '3px 3px 0 #000' }}>
           👤 À PROPOS DE MORGANE 👤
         </h2>
-        <p className="text-xl text-yellow-200 max-w-2xl mx-auto leading-relaxed"
+        <p className="text-base md:text-xl text-yellow-200 max-w-2xl mx-auto leading-relaxed"
            style={{ textShadow: '2px 2px 0 #000' }}>
           Visionnaire. Leader. Légende. Morgane est le manager que personne n'a demandée,
           mais que tout le monde a eue. Son parcours est un mélange unique de
@@ -103,7 +103,7 @@ export default function About() {
 
       {/* CITATION */}
       <section className="text-center mb-16 py-8">
-        <blockquote className="text-3xl italic text-white/90 max-w-xl mx-auto"
+        <blockquote className="text-xl md:text-3xl italic text-white/90 max-w-xl mx-auto"
                     style={{ textShadow: '2px 2px 0 rgba(0,0,0,0.5)' }}>
           "Le management, c'est comme la cuisine : même quand c'est dégueulasse, il faut forcer les gens à manger."
         </blockquote>
@@ -127,11 +127,11 @@ export default function About() {
               <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-yellow-400 border-2 border-white z-10 animate-pulse-cursed" />
 
               {/* Content */}
-              <div className={`ml-14 md:ml-0 md:w-5/12 ${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} bg-black/60 rainbow-border rounded-xl p-5 hover:scale-105 transition-transform`}>
-                <div className="text-3xl mb-2">{item.icon}</div>
-                <div className="text-yellow-400 font-bold text-sm">{item.year}</div>
-                <div className="text-lg font-bold text-white mt-1">{item.title}</div>
-                <p className="text-gray-300 text-sm mt-2">{item.desc}</p>
+              <div className={`ml-14 md:ml-0 md:w-5/12 ${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} bg-black/60 rainbow-border rounded-xl p-3 md:p-5 hover:scale-105 transition-transform`}>
+                <div className="text-2xl md:text-3xl mb-1 md:mb-2">{item.icon}</div>
+                <div className="text-yellow-400 font-bold text-xs md:text-sm">{item.year}</div>
+                <div className="text-sm md:text-lg font-bold text-white mt-1">{item.title}</div>
+                <p className="text-gray-300 text-xs md:text-sm mt-1 md:mt-2">{item.desc}</p>
               </div>
             </div>
           ))}

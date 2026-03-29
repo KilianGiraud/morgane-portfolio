@@ -87,7 +87,7 @@ export default function App() {
       <Navbar />
 
       {/* Page content */}
-      <main className="relative z-10 pb-4">
+      <main className="relative z-10 pb-20">
         <div className="page-enter" key={location.pathname}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -105,13 +105,10 @@ export default function App() {
       {/* Clippy */}
       <Clippy />
 
-      {/* Spacer for fixed bottom marquee */}
-      <div className="h-14" />
-
       {/* Bottom marquee */}
       <MarqueeBar
         direction="right"
-        className="bg-blue-700 text-pink-400 border-t-4 border-dashed border-fuchsia-500 fixed bottom-0 w-full left-0 z-50"
+        className="bg-blue-700 text-pink-400 border-t-4 border-dashed border-fuchsia-500 fixed bottom-0 z-50"
         text="⚠️ ATTENTION : Morgane ne rembourse pas. Morgane ne s'excuse pas. Morgane manage. ⚠️ | 📞 APPELEZ LE 0 800 SOUFFRANCE | 💼 Votre burn-out est notre passion ⚠️"
       />
 

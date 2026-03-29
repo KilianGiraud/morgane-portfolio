@@ -29,7 +29,7 @@ export default function Clippy() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-16 right-4 z-[998] animate-float">
+    <div className="hidden md:block fixed bottom-16 right-4 z-[998] animate-float">
       <div className="bg-yellow-100 text-black border-2 border-gray-700 rounded-xl p-3 max-w-[220px] text-sm shadow-lg relative mb-2">
         {MESSAGES[msgIdx]}
         <button

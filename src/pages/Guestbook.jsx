@@ -21,14 +21,14 @@ const INITIAL_ENTRIES = [
     id: 3,
     name: 'employé_anonyme_42',
     date: '15/02/2024',
-    message: 'aidez moi svp elle m\'a mis un objectif de 300% ce trimestre. je dors plus. mes cheveux tombent.',
+    message: 'aidez moi svp il m\'a mis un objectif de 300% ce trimestre. je dors plus. mes cheveux tombent.',
     avatar: '😰',
   },
   {
     id: 4,
     name: 'InspectionDuTravail',
     date: '16/02/2024',
-    message: 'Monsieur, veuillez nous recontacter d\'urgence. Cordialement.',
+    message: 'Madame, veuillez nous recontacter d\'urgence. Cordialement.',
     avatar: '⚖️',
   },
   {
@@ -149,20 +149,20 @@ export default function Guestbook() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <h2 className="text-center text-4xl font-bold text-yellow-400 mb-4 animate-glitch"
+    <div className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-yellow-400 mb-4 animate-glitch"
           style={{ textShadow: '3px 3px 0 #000' }}>
         📖 LIVRE D'OR 📖
       </h2>
-      <p className="text-center text-gray-300 mb-8 text-lg">
+      <p className="text-center text-gray-300 mb-8 text-sm md:text-lg">
         Laissez un message ! (Morgane lit tout et juge tout)
       </p>
 
       {/* Response popup */}
       {showResponse && (
-        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 border-4 border-yellow-400 rounded-xl p-8 z-[9999] max-w-md text-center animate-zoom-in-out">
-          <div className="text-5xl mb-4">👑</div>
-          <p className="text-yellow-300 font-bold text-lg">{showResponse}</p>
+        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 border-4 border-yellow-400 rounded-xl p-5 md:p-8 z-[9999] max-w-xs md:max-w-md text-center animate-zoom-in-out">
+          <div className="text-4xl md:text-5xl mb-3 md:mb-4">👑</div>
+          <p className="text-yellow-300 font-bold text-sm md:text-lg">{showResponse}</p>
         </div>
       )}
 

@@ -116,24 +116,24 @@ export default function Blog() {
   const [expandedId, setExpandedId] = useState(null)
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
-      <h2 className="text-center text-4xl font-bold text-fuchsia-400 mb-4 animate-glitch"
+    <div className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-fuchsia-400 mb-4 animate-glitch"
           style={{ textShadow: '3px 3px 0 #000' }}>
         📝 LE BLOG DE MORGANE 📝
       </h2>
-      <p className="text-center text-gray-300 mb-12 text-lg">
-        Pensées, conseils et traumatismes — par la manager que personne n'a demandée
+      <p className="text-center text-gray-300 mb-8 md:mb-12 text-sm md:text-lg">
+        Pensées, conseils et traumatismes — par le manager que personne n'a demandé
       </p>
 
       {ARTICLES.map(article => {
         const isExpanded = expandedId === article.id
         return (
           <article key={article.id}
-                   className="mb-8 bg-black/60 rainbow-border rounded-xl overflow-hidden hover:scale-[1.02] transition-transform">
+                   className="mb-6 md:mb-8 bg-black/60 rainbow-border rounded-xl overflow-hidden hover:scale-[1.02] transition-transform">
             {/* Header */}
-            <div className="p-6">
-              <div className="text-sm text-gray-400 mb-2">{article.date}</div>
-              <h3 className="text-xl font-bold text-yellow-300 mb-3 hover:animate-shake cursor-pointer"
+            <div className="p-4 md:p-6">
+              <div className="text-xs md:text-sm text-gray-400 mb-2">{article.date}</div>
+              <h3 className="text-base md:text-xl font-bold text-yellow-300 mb-3 hover:animate-shake cursor-pointer"
                   onClick={() => setExpandedId(isExpanded ? null : article.id)}>
                 {article.title}
               </h3>
@@ -147,26 +147,26 @@ export default function Blog() {
 
               {/* Content */}
               {isExpanded ? (
-                <div className="text-gray-200 whitespace-pre-line leading-relaxed border-t border-gray-700 pt-4 mt-4">
+                <div className="text-gray-200 text-sm md:text-base whitespace-pre-line leading-relaxed border-t border-gray-700 pt-4 mt-4">
                   {article.content}
                 </div>
               ) : (
-                <p className="text-gray-400 italic">{article.preview}</p>
+                <p className="text-gray-400 italic text-sm">{article.preview}</p>
               )}
 
               <button
                 onClick={() => setExpandedId(isExpanded ? null : article.id)}
-                className="mt-4 text-cyan-400 font-bold hover:text-cyan-300 transition-colors"
+                className="mt-3 md:mt-4 text-cyan-400 font-bold hover:text-cyan-300 transition-colors text-sm md:text-base"
               >
                 {isExpanded ? '🔼 Replier (trop tard, vous avez lu)' : '🔽 Lire la suite (à vos risques et périls)'}
               </button>
             </div>
 
             {/* Reactions */}
-            <div className="bg-black/40 px-6 py-3 flex flex-wrap gap-3 border-t border-gray-800">
+            <div className="bg-black/40 px-3 md:px-6 py-2 md:py-3 flex flex-wrap gap-2 md:gap-3 border-t border-gray-800">
               {Object.entries(article.reactions).map(([emoji, count]) => (
                 <button key={emoji}
-                        className="bg-gray-800 hover:bg-gray-700 px-3 py-1 rounded-full text-sm transition-colors hover:scale-110">
+                        className="bg-gray-800 hover:bg-gray-700 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-colors hover:scale-110">
                   {emoji} <span className="text-gray-300">{count.toLocaleString('fr-FR')}</span>
                 </button>
               ))}

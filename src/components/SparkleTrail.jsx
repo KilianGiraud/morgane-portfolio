@@ -11,15 +11,22 @@ export default function SparkleTrail() {
       if (Date.now() - lastTime < 80) return
       lastTime = Date.now()
       const id = Date.now() + Math.random()
-      setSparkles(prev => [...prev.slice(-20), {
+      // Support both mouse and touch
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY
+      setSparkles(prev => [...prev.slice(-15), {
         id,
-        x: e.clientX,
-        y: e.clientY,
+        x: clientX,
+        y: clientY,
         emoji: SPARKLES[Math.floor(Math.random() * SPARKLES.length)],
       }])
     }
     document.addEventListener('mousemove', handler)
-    return () => document.removeEventListener('mousemove', handler)
+    document.addEventListener('touchmove', handler, { passive: true })
+    return () => {
+      document.removeEventListener('mousemove', handler)
+      document.removeEventListener('touchmove', handler)
+    }
   }, [])
 
   useEffect(() => {

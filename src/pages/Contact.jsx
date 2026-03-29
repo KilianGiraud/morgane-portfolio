@@ -47,7 +47,7 @@ export default function Contact() {
 
   return (
     <div className={`max-w-3xl mx-auto px-4 py-12 ${formShake ? 'animate-shake' : ''}`}>
-      <h2 className="text-center text-4xl font-bold text-pink-400 mb-4 animate-glitch"
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-pink-400 mb-4 animate-glitch"
           style={{ textShadow: '3px 3px 0 #000' }}>
         📧 CONTACTEZ MORGANE 📧
       </h2>
@@ -58,12 +58,12 @@ export default function Contact() {
       {/* RESPONSE MODAL */}
       {submitted && response && (
         <div className="fixed inset-0 bg-black/85 z-[9999] flex items-center justify-center" onClick={closeResponse}>
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rainbow-border rounded-2xl p-8 max-w-md mx-4 text-center"
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rainbow-border rounded-2xl p-5 md:p-8 max-w-sm md:max-w-md mx-4 text-center"
                style={{ animation: 'page-slam 0.5s ease-out' }}
                onClick={e => e.stopPropagation()}>
-            <div className="text-6xl mb-4">{response.icon}</div>
-            <h3 className="text-2xl font-bold text-lime-400 mb-3">{response.title}</h3>
-            <p className="text-gray-200 text-lg mb-6">{response.text}</p>
+            <div className="text-4xl md:text-6xl mb-3 md:mb-4">{response.icon}</div>
+            <h3 className="text-lg md:text-2xl font-bold text-lime-400 mb-2 md:mb-3">{response.title}</h3>
+            <p className="text-gray-200 text-sm md:text-lg mb-4 md:mb-6">{response.text}</p>
             <button onClick={closeResponse}
                     className="bg-black border-2 border-lime-400 text-lime-400 px-8 py-3 rounded-lg font-bold hover:bg-lime-400 hover:text-black transition-colors">
               OK (je regrette déjà)
@@ -91,7 +91,7 @@ export default function Contact() {
       {/* HORAIRES */}
       <div className="bg-black/60 rainbow-border rounded-xl p-6 mb-12 text-center">
         <h3 className="text-xl font-bold text-yellow-400 mb-4">🕐 HORAIRES D'OUVERTURE 🕐</h3>
-        <div className="grid grid-cols-2 gap-2 max-w-md mx-auto text-sm">
+        <div className="grid grid-cols-2 gap-1 md:gap-2 max-w-md mx-auto text-xs md:text-sm">
           {[
             ['Lundi', '5h00 - 23h59'],
             ['Mardi', '4h00 - 00h00'],
@@ -150,7 +150,7 @@ export default function Contact() {
             <select className="w-full bg-gray-900 border-2 border-fuchsia-500 rounded-lg px-4 py-3 text-white font-cursed focus:border-cyan-400 focus:outline-none">
               <option>📰 Article "Les 30 managers les plus redoutés"</option>
               <option>🏃 En fuyant une de ses conférences</option>
-              <option>😱 il m'a ajouté sur LinkedIn 47 fois</option>
+              <option>😱 Il m'a ajouté sur LinkedIn 47 fois</option>
               <option>🆘 Tribunal des prud'hommes</option>
               <option>🧠 Mon psychologue m'a parlé d'il (en tant que cas d'étude)</option>
               <option>📎 Clippy me l'a recommandée</option>
