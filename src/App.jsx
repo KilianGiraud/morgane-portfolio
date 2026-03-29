@@ -79,7 +79,7 @@ export default function App() {
       {/* Top marquee */}
       <MarqueeBar
         direction="left"
-        className="bg-red-600 text-yellow-300 border-b-4 border-dashed border-lime-400 sticky top-0 z-50"
+        className="bg-blue-700 text-pink-400 border-t-4 border-dashed border-fuchsia-500 fixed bottom-0 w-full left-0 z-50"
         text="🚨🚨🚨 BIENVENUE SUR LE SITE OFFICIEL DE MORGANE — PROFESSIONAL AUTISTIC MANAGER™ — TARIF : 500€/h (résultats non garantis) — ÉLUE PIRE MANAGER 2024 PAR SES PROPRES EMPLOYÉS 🚨🚨🚨"
       />
 
